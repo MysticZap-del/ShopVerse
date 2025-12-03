@@ -9,7 +9,7 @@
 /* Table Header */
 .cartitems-format-main {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 0.7fr;
+    grid-template-columns: 0.5fr 2fr 1fr 0.7fr 1fr 1fr 0.7fr;
     align-items: center;
     gap: 25px;
     padding: 14px 20px;
@@ -33,7 +33,7 @@
     font-weight: 500;
     padding: 15px 10px;
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 0.7fr;
+    grid-template-columns: 0.5fr 2fr 1fr 0.7fr 1fr 1fr 0.7fr;
     gap: 25px;
     align-items: center;
 }
@@ -82,7 +82,7 @@
     background: #ffffff;
     border: 1px solid #dedede;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .cartitems-total h1 {
@@ -130,7 +130,7 @@
     background: #ffffff;
     border: 1px solid #dedede;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .cartitems-promocode p {

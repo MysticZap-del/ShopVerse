@@ -3,13 +3,14 @@ import "./CartItems.css"
 import remove_icon from "../../assets/remove.webp"
 import { ShopContext } from '../../Context/ShopContext'
 const CartItems = () => {
-    const { getTotalCartAmount,all_product, cartItems, removeFromCart } = useContext(ShopContext);
+    const { getTotalCartAmount, all_product, cartItems, cartSizes, removeFromCart } = useContext(ShopContext);
     return (
         <div className='cartItems'>
             <div className="cartitems-format-main">
                 <p>Products</p>
                 <p>Title</p>
                 <p>Price</p>
+                <p>Size</p>
                 <p>Quantity</p>
                 <p>Total</p>
                 <p>Remove</p>
@@ -22,13 +23,14 @@ const CartItems = () => {
                             <img src={e.image} alt="" height="100px" />
                             <p>{e.name}</p>
                             <p>${e.new_price}</p>
+                            <p>{cartSizes[e.id] || 'M'}</p>
                             <button className='cartitems-quantity'>
                                 {cartItems[e.id]}
                             </button>
-                            <p>{e.new_price*cartItems[e.id]}</p>
-                            <img src={remove_icon} alt="" onClick={()=> removeFromCart(e.id)} height="20px"/>
+                            <p>${e.new_price * cartItems[e.id]}</p>
+                            <img src={remove_icon} alt="" onClick={() => removeFromCart(e.id)} height="20px" />
                         </div>
-                        <hr/>
+                        <hr />
                     </div>
                 }
                 return null;
@@ -41,12 +43,12 @@ const CartItems = () => {
                             <p>Subtotal</p>
                             <p>${getTotalCartAmount()}</p>
                         </div>
-                        <hr/>
+                        <hr />
                         <div className="cartitems-total-item">
                             <p>Shipping Fee</p>
                             <p>Free</p>
                         </div>
-                        <hr/>
+                        <hr />
                         <div className="cartitems-total-item">
                             <p>Total</p>
                             <p>${getTotalCartAmount()}</p>
@@ -57,7 +59,7 @@ const CartItems = () => {
                 <div className="cartitems-promocode">
                     <p>If you have a promo code, Enter it here</p>
                     <div className="cartitems-promobox">
-                        <input type='text' placeholder='promo code'/>
+                        <input type='text' placeholder='promo code' />
                         <button>submit</button>
                     </div>
                 </div>
